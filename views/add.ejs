@@ -1,0 +1,39 @@
+<%- include('./partials/head') %>
+
+    <section class="addSeite">
+        <h1>ADD A NEW PRODUCT</h1>
+        <div class="container">
+            <form action="/add" method="POST">
+                <input type="text" name="product_name" placeholder="Product-name">
+                <input type="text" name="picture_Link" placeholder="Url Picture">
+                <input type="text" name="company" placeholder="Company">
+                <input type="text" name="price" placeholder="Price">
+                <textarea name="description" id="" cols="30" rows="10"
+                    placeholder="Write your article here ..."></textarea>
+                <input type="submit" value="ADD PRODUCT">
+
+            </form>
+        </div>
+    </section>
+    <section>
+        <div class="line"></div>
+        <div class="augen"><img src="/assets/img/Group.svg" alt=""></div>
+    </section>
+    <%newItems.forEach(element=> {%>
+        <section class="section-Item">
+            <a href=""><img src="<%= element.picture_Link %> " alt=""></a>
+            <div class="div-Item">
+                <h2>
+                    <%= element.product_name %>
+                </h2>
+                <h2>
+                    <%= element.price %>
+                </h2>
+            </div>
+            <p>
+                <%= element.company %>
+            </p>
+        </section>
+        <%});%>
+
+            <%- include('./partials/foot') %>

@@ -1,0 +1,20 @@
+<%- include('./partials/head') %>
+    <div class="div-del-edit">
+        <a href="/details/<%= element._id %>/delete">Edit</a>
+        <a href="">Delete</a>
+    </div>
+    <section class="section-details">
+        <img src="<%= Details.picture_Link %> " alt="">
+        <div class="div-Item">
+            <h2>
+                <%= Details.product_name %>
+            </h2>
+            <h2>
+                <%= Details.price %>
+            </h2>
+        </div>
+        <p>
+            <%= Details.company %>
+        </p>
+    </section>
+    <%- include('./partials/foot') %>
